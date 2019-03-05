@@ -2,6 +2,7 @@ package com.stackroute.controller;
 
 
 import com.stackroute.domain.User;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -24,7 +25,11 @@ public class UserController {
 
        String userName = request.getParameter("username");
        User user = new User(userName,"male");
-       modelAndView.addObject("name", user);
+       modelAndView.addObject("name", user.getUserName());
+
+       // Converrt  to json Object
+
+
         return modelAndView;
     }
 
